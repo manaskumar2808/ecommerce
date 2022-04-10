@@ -8,6 +8,7 @@ export const Container = styled.div`
 `;
 
 export const Btn = styled.button`
+    cursor: pointer;
     width: 100%;
     height: 100%;
     border: 0;

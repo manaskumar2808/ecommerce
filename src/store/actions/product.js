@@ -1,4 +1,4 @@
-import { SET_PRODUCTS, SET_PRODUCT_SUCCESS } from '../action-types';
+import { SET_PRODUCTS } from '../action-types';
 
 export const getAllProducts = () => { 
     return async dispatch => { 
@@ -9,6 +9,12 @@ export const getAllProducts = () => {
             }
         });
         const { products } = await data.json();
+        dispatch(setAllProducts(products));
+    }
+}
+
+export const updateProductList = (products) => { 
+    return dispatch => { 
         dispatch(setAllProducts(products));
     }
 }

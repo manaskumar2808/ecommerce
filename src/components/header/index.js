@@ -3,10 +3,13 @@ import { Action, Container, LowerSection, SearchContainer, Text, Title, UpperSec
 import { HiOutlineShoppingCart } from 'react-icons/hi';
 import { BLACK } from '../../constants/colors';
 import Search from '../search';
+import { useSelector } from 'react-redux';
 
 
 const Header = () => {
-    const [search, setSearch] = useState();
+    const cart = useSelector(state => state.crt.cart);
+
+    const [search, setSearch] = useState('');
 
     return (
         <Container>
@@ -17,7 +20,7 @@ const Header = () => {
                 <Action>
                     <HiOutlineShoppingCart color={BLACK} size={30} />
                     <div style={{ width: 10 }} />
-                    <Text>0</Text>
+                    <Text>{cart.length}</Text>
                 </Action>
             </UpperSection>
             <LowerSection>

@@ -1,2 +1,5 @@
 export const SET_PRODUCTS = 'SET_PRODUCTS';
 export const SET_PRODUCT_SUCCESS = 'SET_PRODUCT_SUCCESS';
+
+export const SET_CART_ITEM = 'SET_CART_ITEM';
+export const REMOVE_CART_ITEM = 'REMOVE_CART_ITEM';

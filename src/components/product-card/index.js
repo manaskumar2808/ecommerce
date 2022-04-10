@@ -2,12 +2,12 @@ import React, { useEffect, useState } from 'react';
 import Button from '../button';
 import { Action, Container, Display, Info, Photo, Price, Title } from './styles';
 
-const ProductCard = ({ product: { product_title, p_image, list_price, brand, id, stock, discount } }) => { 
+const ProductCard = ({ product: { product_title, p_image, list_price, brand, id, stock, discount }, onAddToCart }) => { 
     const discountPrice = !discount.substr(-1, 1);
     const price = list_price - (list_price * (discountPrice / 100));
 
     return (
-        <Container>
+        <Container onClick={onAddToCart}>
             <Display>
                 <Photo src={p_image} alt={product_title} />
             </Display>
